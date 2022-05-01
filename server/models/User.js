@@ -20,7 +20,7 @@ const userSchema = new Schema(
             required: true,
             minlength: 8,
           },
-        from: {
+        country: {
             type: String,
 
         },

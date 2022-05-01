@@ -5,12 +5,19 @@ const postSchema = new Schema(
     {
     title: {
        type: String,
-       required: true
+       required: true,
+       trim: true,
      },
      text: {
          type: String,
-         required: true
+         required: true,
+         trim: true,
      },
+     postAuther: {
+      type: String,
+      required: true,
+      trim: true,
+    },
      selectFile: {
         type: String
      },
@@ -22,6 +29,7 @@ const postSchema = new Schema(
          type: Date,
          default: new Date()
      },
+     
      comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     },
     {

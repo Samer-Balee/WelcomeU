@@ -1,54 +1,54 @@
 [
   {
-    "username": "Samer Balee",
+    "name": "Samer Balee",
     "email": "smr@gmail.com",
     "password": "password01",
-    "from": "Iraq",
+    "country": "Iraq",
     "arrivedAt": "October/2017",
     "speak": "English, Arabic, Chaldian",
     "livesIn": "Liverpool"
   },
   {
-    "username": "Mahir Walid",
+    "name": "Mahir Walid",
     "email": "mahir@gmail.com",
     "password": "password02",
-    "from": "Syria",
+    "country": "Syria",
     "arrivedAt": "November/2020",
     "speak": "English, Arabic",
     "livesIn": "Fairfield"
   },
   {
-    "username": "Bird Lee",
+    "name": "Bird Lee",
     "email": "bird@gmail.com",
     "password": "password03",
-    "from": "China",
+    "country": "China",
     "arrivedAt": "May/2019",
     "speak": "Engglish, Chinees",
     "livesIn": "Cabramata"
   },
   {
-    "username": "John Wong",
+    "name": "John Wong",
     "email": "John@gmail.com",
     "password": "password04",
-    "from": "China",
+    "country": "China",
     "arrivedAt": "October/2017",
     "speak": "Engglish, Chinees",
     "livesIn": "Canly Vale"
   },
   {
-    "username": "Naseem Hana",
+    "name": "Naseem Hana",
     "email": "nasseem@gmail.com",
     "password": "password05",
-    "from": "Iraq",
+    "country": "Iraq",
     "arrivedAt": "January/2021",
     "speak": "Engglish, Arabic",
     "livesIn": "Liverpool"
   },
   {
-    "username": "Rana Adam",
+    "name": "Rana Adam",
     "email": "rana@gmail.com",
     "password": "password06",
-    "from": "Syria",
+    "country": "Syria",
     "arrivedAt": "October/2019",
     "speak": " Arabic, Chaldian",
     "livesIn": "Liverpool"
