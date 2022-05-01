@@ -17,7 +17,8 @@ type User {
     text: String
     likeCount: String
     createdAt: String
-   
+    userId: String
+    postAuthor: String
   }
 
   type Query {
@@ -28,7 +29,7 @@ type User {
   type Mutation {
     # Set the required fields for new schools
     addUser(name: String!, email: String!, password: String!): User
-    addPost(userId: ID!, title: String!, text: String!): User
+    addPost(userId: ID!, title: String!, text: String!): Post
   }
 `;
 

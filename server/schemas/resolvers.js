@@ -18,6 +18,14 @@ const resolvers = {
        },
       addPost: async (parent, args) => {
         const post = await Post.create(args);
+        await User.findOneAndUpdate(
+          { _id: args.userId },
+          {
+            $addToSet: {
+              posts: post._id,
+            },
+          }
+        )
         return post;
       }
     }

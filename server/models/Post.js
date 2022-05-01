@@ -13,10 +13,14 @@ const postSchema = new Schema(
          required: true,
          trim: true,
      },
-     postAuther: {
+     postAuthor: {
       type: String,
-      required: true,
+    
       trim: true,
+    },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
     },
      selectFile: {
         type: String
