@@ -1,6 +1,6 @@
 [
   {
-    "name": "Samer Balee",
+    "username": "Samer Balee",
     "email": "smr@gmail.com",
     "password": "password01",
     "country": "Iraq",
@@ -9,7 +9,7 @@
     "livesIn": "Liverpool"
   },
   {
-    "name": "Mahir Walid",
+    "username": "Mahir Walid",
     "email": "mahir@gmail.com",
     "password": "password02",
     "country": "Syria",
@@ -18,7 +18,7 @@
     "livesIn": "Fairfield"
   },
   {
-    "name": "Bird Lee",
+    "username": "Bird Lee",
     "email": "bird@gmail.com",
     "password": "password03",
     "country": "China",
@@ -27,7 +27,7 @@
     "livesIn": "Cabramata"
   },
   {
-    "name": "John Wong",
+    "username": "John Wong",
     "email": "John@gmail.com",
     "password": "password04",
     "country": "China",
@@ -36,7 +36,7 @@
     "livesIn": "Canly Vale"
   },
   {
-    "name": "Naseem Hana",
+    "username": "Naseem Hana",
     "email": "nasseem@gmail.com",
     "password": "password05",
     "country": "Iraq",
@@ -45,7 +45,7 @@
     "livesIn": "Liverpool"
   },
   {
-    "name": "Rana Adam",
+    "username": "Rana Adam",
     "email": "rana@gmail.com",
     "password": "password06",
     "country": "Syria",

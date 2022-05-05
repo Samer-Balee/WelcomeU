@@ -15,7 +15,6 @@ const postSchema = new Schema(
      },
      postAuthor: {
       type: String,
-    
       trim: true,
     },
     userId: {

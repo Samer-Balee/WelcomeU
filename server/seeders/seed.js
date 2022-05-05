@@ -11,11 +11,11 @@ db.once('open', async () => {
     await User.create(userSeeds);
 
     for (let i = 0; i < postSeeds.length; i++) {
-      const user = await User.findOne({name: postSeeds[i].postAuthor});
+      const user = await User.findOne({username: postSeeds[i].postAuthor});
       postSeeds[i].userId = user._id
       const { _id, postAuthor } = await Post.create(postSeeds[i]);
       await User.findOneAndUpdate(
-        { name: postAuthor },
+        { username: postAuthor },
         {
           $addToSet: {
             posts: _id,
