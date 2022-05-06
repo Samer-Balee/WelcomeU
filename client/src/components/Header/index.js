@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import welcomeu from '../../assets/images/welcomeu.png';
 import Auth from '../../utils/auth';
 
 const Header = () => {
@@ -12,7 +12,7 @@ const Header = () => {
     <header className='flex justify-center '>
       <div  className="flex flex-row h-20 w-11/12 bg-gradient-to-r from-green-400 to-blue-500 mt-4 rounded-md shadow shadow-blue-500/40" >
         <h1 className="w-full text-center text-5xl font-serif font-extrabold py-4 ">WelcomeU</h1>
-        <div className=' w-31'>LOGO</div>
+        <img src={welcomeu} alt="welcomeu" className="rounded-xl"/>
         <div className='flex justify-end w-full'>
           <Link to='/ ' >
             <div className="px-3 py-5 m-2 font-serif text-xl hover:text-2xl">Home</div>
