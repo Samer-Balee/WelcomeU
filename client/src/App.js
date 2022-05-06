@@ -72,7 +72,11 @@ const App = () => {
                                 path="/"
                                 element={<Home />}
                             />
-                            {/* <Route
+                            <Route
+                                path="/me"
+                                element={<Profile />}
+                            />
+                            <Route
                                 path="/login"
                                 element={<Login />}
                             />
@@ -80,18 +84,7 @@ const App = () => {
                                 path="/signup"
                                 element={<Signup />}
                             />
-                            <Route
-                                path="/me"
-                                element={<Profile />}
-                            />
-                            <Route
-                                path="/profiles/:username"
-                                element={<Profile />}
-                            />
-                            <Route
-                                path="/thoughts/:thoughtId"
-                                element={<SinglePost />}
-                            /> */}
+                            
                         </Routes>
                     </div>
                 </div>

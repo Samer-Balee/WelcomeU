@@ -4,21 +4,29 @@ import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
 const Header = () => {
-    const logout = (event) => {
-      event.preventDefault();
-      Auth.logout();
-    };
-    return (
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+  return (
       <header className="flex flex-row bg-red-200 h-16">
-        <div className='bg-blue-200 w-32'>LOGO</div>
+        <div className='bg-blue-200 w-31'>LOGO</div>
         <div className='flex bg-green-100 justify-end w-full'>
+        <Link to=  '/ ' >
           <div className="px-4 py-4 mx-2">home</div>
+          </Link>
+          <Link to= '/me ' >
           <div className='px-4 py-4 mx-2'>Profile</div>
+          </Link>
+          <Link to= '/Login '>
           <div className='px-4 py-4 mx-2'>Login</div>
+          </Link>
+          <Link to= '/Signup '>
           <div className='px-4 py-4 mx-2'>Signup</div>
-        </div>
+          </Link >
+        </div >
 
-        {/* <div className="container flex-row justify-space-between-lg justify-center align-center">
+{/* <div className="container flex-row justify-space-between-lg justify-center align-center">
           <div>
             <Link className="text-light" to="/">
               <h1 className="m-0">Tech Thoughts</h1>
@@ -47,11 +55,10 @@ const Header = () => {
             )}
           </div>
         </div> */}
-      </header>
+      </header >
     );
   };
-  
-  export default Header;
+
+export default Header;
 
   //'bg-blue-100 px-8 py-4 mx-2 rounded-md hover:bg-blue-400 cursor-pointer shadow-lg'
-  
