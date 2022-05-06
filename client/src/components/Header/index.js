@@ -9,8 +9,16 @@ const Header = () => {
       Auth.logout();
     };
     return (
-      <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-        <div className="container flex-row justify-space-between-lg justify-center align-center">
+      <header className="flex flex-row bg-red-200 h-16">
+        <div className='bg-blue-200 w-32'>LOGO</div>
+        <div className='flex bg-green-100 justify-end w-full'>
+          <div className="px-4 py-4 mx-2">home</div>
+          <div className='px-4 py-4 mx-2'>Profile</div>
+          <div className='px-4 py-4 mx-2'>Login</div>
+          <div className='px-4 py-4 mx-2'>Signup</div>
+        </div>
+
+        {/* <div className="container flex-row justify-space-between-lg justify-center align-center">
           <div>
             <Link className="text-light" to="/">
               <h1 className="m-0">Tech Thoughts</h1>
@@ -38,10 +46,12 @@ const Header = () => {
               </>
             )}
           </div>
-        </div>
+        </div> */}
       </header>
     );
   };
   
   export default Header;
+
+  //'bg-blue-100 px-8 py-4 mx-2 rounded-md hover:bg-blue-400 cursor-pointer shadow-lg'
   
