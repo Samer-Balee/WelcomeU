@@ -40,9 +40,9 @@ const Login = () => {
                 <span className="text-gray-700 mt-3 font-medium">Don't have account?</span>
                 <Link to= '/signup '>
                 <button className="
-                    bg-rose-400 rounded-md
+                    bg-green-400 rounded-md
                     w-60 mt-3 h-10 block
-                   hover:bg-rose-300 font-medium
+                   hover:bg-green-200 font-medium
                    ">signup
                 </button>
                 </Link>

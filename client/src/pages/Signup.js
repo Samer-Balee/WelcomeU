@@ -51,9 +51,9 @@ const Signup = () => {
                 <span className="text-gray-700 mt-3 font-medium">Have account?</span>
                 <Link to= '/login '>
                 <button className="
-                    bg-rose-400 rounded-md
+                    bg-green-400 rounded-md
                     w-60 mt-3 h-10 block
-                   hover:bg-rose-300 font-medium
+                   hover:bg-green-300 font-medium
                    ">login
                 </button>
                 </Link>
