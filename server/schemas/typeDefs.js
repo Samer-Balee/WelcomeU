@@ -19,7 +19,6 @@ type User {
     postAuthor: String
     likeCount: String
     createdAt: String
-    userId: String
   }
 
   type Comment {
@@ -37,7 +36,7 @@ type User {
   type Query {
     users: [User]!
     user(username: String!): User
-    posts(username: String): [Post]
+    posts: [Post]
     post(postId: ID!): Post
     me: User
   }
@@ -45,7 +44,7 @@ type User {
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addPost(userId: ID!, title: String!, text: String!): Post
+    addPost(title: String!, text: String!): Post
     addComment(postId: ID!, commentText: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post

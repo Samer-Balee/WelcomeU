@@ -59,7 +59,7 @@ const resolvers = {
         });
 
         await User.findOneAndUpdate(
-          { _id: context.userId._id },
+          { postAuthor: context.user.username},
           {
             $addToSet: { posts: post._id }
           }

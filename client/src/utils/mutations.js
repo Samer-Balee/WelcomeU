@@ -24,3 +24,15 @@ export const ADD_USER = gql`
   }
 `;
 
+export const ADD_POST = gql`
+mutation Mutation($userId: ID!, $title: String!, $text: String!) {
+  addPost(userId: $userId, title: $title, text: $text) {
+    title
+    text
+    postAuthor
+    likeCount
+    createdAt
+  }
+}
+`;
+

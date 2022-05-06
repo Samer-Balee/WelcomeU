@@ -1,4 +1,4 @@
-
+const dateFormat = require('../utils/dateFormat')
 const { Schema, model } = require('mongoose');
 
 const postSchema = new Schema(
@@ -17,10 +17,10 @@ const postSchema = new Schema(
       type: String,
       trim: true,
     },
-    userId: {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    },
+    // userId: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'User'
+    // },
      selectFile: {
         type: String
      },
@@ -30,7 +30,8 @@ const postSchema = new Schema(
      },
      createdAt: {
          type: Date,
-         default: new Date()
+         default: new Date(),
+         get: (timestamp) => dateFormat(timestamp),
      },
      
      comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],

@@ -1,3 +1,5 @@
+const dateFormat = require('../utils/dateFormat')
+
 const { Schema, model } = require('mongoose');
 
 // Schema for what makes up a comment
