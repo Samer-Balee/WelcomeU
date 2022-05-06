@@ -9,7 +9,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-      <header className="flex flex-row bg-red-200 h-16">
+      <header className="flex flex-row bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-16">
         <div className='bg-blue-200 w-31'>LOGO</div>
         <div className='flex bg-green-100 justify-end w-full'>
         <Link to=  '/ ' >
@@ -18,10 +18,10 @@ const Header = () => {
           <Link to= '/me ' >
           <div className='px-4 py-4 mx-2'>Profile</div>
           </Link>
-          <Link to= '/Login '>
+          <Link to= '/login '>
           <div className='px-4 py-4 mx-2'>Login</div>
           </Link>
-          <Link to= '/Signup '>
+          <Link to= '/signup '>
           <div className='px-4 py-4 mx-2'>Signup</div>
           </Link >
         </div >
