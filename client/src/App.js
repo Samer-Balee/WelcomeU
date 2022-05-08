@@ -9,7 +9,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Profile from './pages/Profile';
-import SinglePost from './pages/singlePost'
+// import SinglePost from './pages/singlePost'
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
     uri: '/graphql',
