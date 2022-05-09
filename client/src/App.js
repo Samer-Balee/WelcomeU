@@ -40,7 +40,7 @@ const App = () => {
             <Router>
                 <div className="flex-column justify-flex-start min-100-vh">
                     <Header />
-                    <div className="container">
+                    
                         <Routes>
                             <Route
                                 path="/"
@@ -60,7 +60,7 @@ const App = () => {
                             />
                             
                         </Routes>
-                    </div>
+                   
                 </div>
             </Router>
         </ApolloProvider>

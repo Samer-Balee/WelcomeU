@@ -21,7 +21,7 @@ query Query($username: String!) {
 }
 `;
 
-export const Query_POSTS = gql`
+export const QUERY_POSTS = gql`
 query Posts {
   posts {
     _id
@@ -33,7 +33,7 @@ query Posts {
 }
 `;
 
-export const Query_SINGLE_POST = gql`
+export const QUERY_SINGLE_POST = gql`
 query Query($postId: ID!) {
   post(postId: $postId) {
     _id

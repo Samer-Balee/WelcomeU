@@ -4,23 +4,26 @@ import { useQuery } from '@apollo/client';
 import PostList from '../components/PostList';
 import PostForm from '../components/PostForm';
 
-import { Query_POSTS } from '../utils/queries';
+import { QUERY_POSTS } from '../utils/queries';
 
 
 
 const Home = () => {
-  const { loading, data } = useQuery(Query_POSTS);
+  const { loading, data } = useQuery(QUERY_POSTS);
   const posts = data?.posts || [];
 
-  
+
 
   return (
-    <main className='container mx-auto flex flex-row justify-around'>
+    <main className='flex justify-around'>
+      {/* <div className='flex flex-row w-11/12 justify-between'> */}
+        <div className='w-3/5'>PostList
 
-      <div className='columns-8'>PostList
-
-      </div>
-      <PostForm/>
+        </div>
+        
+        <PostForm />
+        
+      {/* </div> */}
     </main>
   );
 };
