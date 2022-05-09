@@ -41,7 +41,7 @@ const Login = (props) => {
         <div className='container w-1/3 mx-auto'>
             <h2 className="text-3xl font-bold mt-5 mb-4">Login</h2>
             <hr />
-            
+
             {data ? (
                 <p>
                     Success! You may now head{' '}
@@ -87,7 +87,7 @@ const Login = (props) => {
                             bg-blue-400 rounded-md
                             w-full mt-5 h-10 block
                             hover:bg-blue-500 font-medium"
-                            type="submit"
+                        type="submit"
                     >login
                     </button>
                     <div className="flex flex-row justify-between mt-4">
@@ -98,13 +98,13 @@ const Login = (props) => {
                             w-60 mt-3 h-10 block
                             hover:bg-green-200 font-medium"
                             >
-                             signup
+                                signup
                             </button>
                         </Link>
                     </div>
                 </form>
             )}
-            
+
             {error && (
                 <div className="my-3 p-3">
                     {error.message}

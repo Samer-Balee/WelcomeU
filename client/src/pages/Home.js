@@ -1,41 +1,29 @@
 import React from 'react';
-// import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
-// import PostList from '../components/PostList';
-// import PostForm from '../components/PostForm';
+import PostList from '../components/PostList';
+import PostForm from '../components/PostForm';
 
-// import { Query_POSTS } from '../utils/queries';
+import { Query_POSTS } from '../utils/queries';
 
-// const Home = () => {
-//     const { loading, data } = useQuery(Query_POSTS);
-//     const posts = data?.posts || [];
-  const Home = () => {
-    return (
-      <main>
-        <div>
-          <div>PostForm</div>
-          <div>PostList</div>
-        </div>
-      </main>
-    );
-  };
 
-  // <div
-  //           className="col-12 col-md-10 mb-3 p-3"
-  //           style={{ border: '1px dotted #1a1a1a' }}
-  //         >
-  //           <PostForm />
-  //         </div>
-  //         <div className="col-12 col-md-8 mb-3">
-  //           {loading ? (
-  //             <div>Loading...</div>
-  //           ) : (
-  //             <PostList
-  //               posts={posts}
-  //               title="Some Feed for Post(s)..."
-  //             />
-  //           )}
-  //         </div>
+
+const Home = () => {
+  const { loading, data } = useQuery(Query_POSTS);
+  const posts = data?.posts || [];
+
   
-  export default Home;
-  
+
+  return (
+    <main className='container mx-auto flex flex-row justify-around'>
+
+      <div className='columns-8'>PostList
+
+      </div>
+      <PostForm/>
+    </main>
+  );
+};
+
+
+export default Home;
