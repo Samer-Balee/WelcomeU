@@ -17,12 +17,17 @@ const Home = () => {
   return (
     <main className='flex justify-around'>
       {/* <div className='flex flex-row w-11/12 justify-between'> */}
-        <div className='w-3/5'>PostList
-
-        </div>
+      
+      {loading ? (
+            <div>Loading...</div>
+          ) : (
+        <PostList 
+        posts= {posts}
+        />
+        )}
         
         <PostForm />
-        
+         
       {/* </div> */}
     </main>
   );

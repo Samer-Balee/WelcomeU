@@ -27,6 +27,7 @@ query Posts {
     _id
     title
     text
+    postAuthor
     likeCount
     createdAt
   }

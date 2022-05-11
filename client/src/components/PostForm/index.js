@@ -129,10 +129,14 @@ const PostForm = () => {
                 </form>
             
         ) : (
-            <p>
+          <>
+          <h2 className='font-mono text-2xl text-blue-600/100 font-bold'>Welcome to your App</h2>
+            <p className='text-xl '>
           You need to be logged in to share your posts. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login" className='text-xl text-blue-600/100 font-serif'>login</Link><br />
+           or <Link to="/signup" className='text-xl text-blue-600/100 font-serif'>signup.</Link>
         </p>
+        </>
         )}
         </div>
     );
