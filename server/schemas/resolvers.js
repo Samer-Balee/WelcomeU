@@ -33,24 +33,24 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addProfile: async (parent, { country, arrivedAt, speak, livesIn }, context) => {
-      if (context.user) {
-        // const userProfile = await User.create({
-        //   country,
-        //   arrivedAt,
-        //   speak,
-        //   livesIn
-        // });
+    // addProfile: async (parent, { country, arrivedAt, speak, livesIn }, context) => {
+    //   if (context.user) {
+    //     // const userProfile = await User.create({
+    //     //   country,
+    //     //   arrivedAt,
+    //     //   speak,
+    //     //   livesIn
+    //     // });
 
-      const user = await User.findOneAndUpdate(
-        { _id: context.user._id});
-        {
-          $addToSet: { country, arrivedAt, speak, livesIn }
-        }
+    //   const user = await User.findOneAndUpdate(
+    //     { _id: context.user._id});
+    //     {
+    //       $addToSet: { country, arrivedAt, speak, livesIn }
+    //     }
       
-      return user;
-      }
-    },
+    //   return user;
+    //   }
+    // },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 

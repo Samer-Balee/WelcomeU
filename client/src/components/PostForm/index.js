@@ -14,11 +14,11 @@ const PostForm = () => {
   const [addPost, { error }] = useMutation(ADD_POST, {
     update(cache, { data: { addPost } }) {
       try {
-        const { Posts } = cache.readQuery({ query: QUERY_POSTS });
+        const { posts } = cache.readQuery({ query: QUERY_POSTS });
 
         cache.writeQuery({
           query: QUERY_POSTS,
-          data: { Posts: [addPost, ...Posts] },
+          data: { posts: [addPost, ...posts] },
         });
       } catch (e) {
         console.error(e);
