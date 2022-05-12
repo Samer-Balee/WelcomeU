@@ -19,6 +19,7 @@ type User {
     postAuthor: String
     likeCount: String
     createdAt: String
+    comments: [Comment]!
   }
 
   type Comment {
@@ -45,7 +46,7 @@ type User {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addPost(title: String!, text: String!): Post
-    addComment(postId: ID!, commentText: String!): Post
+    addComment(postId: ID!, commentText: String!, commentAuthor: String!): Post
     removePost(postId: ID!): Post
     removeComment(postId: ID!, commentId: ID!): Post
   }
