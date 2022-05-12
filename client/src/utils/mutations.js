@@ -23,6 +23,19 @@ export const ADD_USER = gql`
     }
   }
 `;
+export const ADD_PROFILE = gql`
+mutation Mutation($country: String!, $arrivedAt: String!, $speak: String!, $livesIn: String!) {
+  addProfile(country: $country, arrivedAt: $arrivedAt, speak: $speak, livesIn: $livesIn) {
+    _id
+    username
+    email
+    country
+    arrivedAt
+    speak
+    livesIn
+  }
+}
+`
 
 export const ADD_POST = gql`
 mutation addPost($title: String!, $text: String!) {
