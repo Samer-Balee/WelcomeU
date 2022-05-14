@@ -1,14 +1,44 @@
 import React from 'react';
+import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { REMOVE_POST } from '../../utils/mutations';
+import { QUERY_ME} from '../../utils/queries'
 
 
 
 const PostList = ({ posts }) => {
 
+  const [removePost, { error }] = useMutation(REMOVE_POST, {
+    update(cache, { data: { removePost } }) {
+      try {
+        const  posts  = cache.readQuery({ query: QUERY_ME });
+        cache.writeQuery({
+          query: QUERY_ME,
+          data: { me: removePost, ...posts},
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
+
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
   }
+
+  
+
+  const handleRemovePost = async (postId) => {
+    try {
+      const { data } = await removePost({
+        variables: { postId },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div >
@@ -22,8 +52,9 @@ const PostList = ({ posts }) => {
                 className="rounded-full w-32 "
                 alt="Avatar"
               />
+              <Link to='userdetails '>
               <h4 >{post.postAuthor}</h4>
-              
+              </Link>
             </div>
             <div>
                  <h4 >{post.createdAt}</h4>
@@ -42,14 +73,18 @@ const PostList = ({ posts }) => {
                   w- mt-3 h-8 block
                   hover:bg-green-300 font-medium"
             type="submit"
+            onClick={() => handleRemovePost(post._id)}
           >Delete post
           </button>
             </div>
             
            {/* <FontAwesomeIcon icon="fa-regular fa-thumbs-up" /> */}
-
+           {error && (
+        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+      )}
             
           </div>
+          
         ))}
     </div>
   );

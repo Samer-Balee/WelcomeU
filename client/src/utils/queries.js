@@ -60,8 +60,15 @@ query Query {
       _id
       title
       text
+      postAuthor
       likeCount
       createdAt
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
     }
   }
 }
