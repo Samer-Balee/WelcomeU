@@ -10,19 +10,19 @@ import { QUERY_ME} from '../../utils/queries'
 
 const PostList = ({ posts }) => {
 
-  const [removePost, { error }] = useMutation(REMOVE_POST, {
-    update(cache, { data: { removePost } }) {
-      try {
-        const  posts  = cache.readQuery({ query: QUERY_ME });
-        cache.writeQuery({
-          query: QUERY_ME,
-          data: { me: removePost, ...posts},
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    },
-  });
+  const [removePost, { error }] = useMutation(REMOVE_POST);
+  //   update(cache, { data: { removePost } }) {
+  //     try {
+  //       const  posts  = cache.readQuery({ query: QUERY_ME });
+  //       cache.writeQuery({
+  //         query: QUERY_ME,
+  //         data: { me: removePost, ...posts},
+  //       });
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
+  //   },
+  // });
 
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
@@ -68,6 +68,12 @@ const PostList = ({ posts }) => {
             </div>
             <div className='flex justify-between'>
               <button className='mt-4 text-blue-500'>Like {post.likeCount}</button>
+              <Link
+              className="mt-5 text-blue-500"
+              to={`/posts/${post._id}`}
+            >
+              Comment
+            </Link>
               <button className="
                   bg-green-200 rounded-md
                   w- mt-3 h-8 block

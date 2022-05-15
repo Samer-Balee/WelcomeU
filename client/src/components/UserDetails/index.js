@@ -7,9 +7,9 @@ const UserDetails = ( ) => {
 
   const { data } = useQuery(QUERY_USER, {
       
-    variables: { username: "Samer Balee" },
+    variables: { username: "Julian Balee" },
   } );
-  
+  console.log(data);
 
 
     return (
