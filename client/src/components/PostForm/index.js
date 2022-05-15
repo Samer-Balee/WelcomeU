@@ -115,13 +115,13 @@ const PostForm = () => {
             type="submit"
           >SUBMIT
           </button>
-          <button className="
+          {/* <button className="
                   bg-green-400 rounded-md
                   w-full mt-3 h-8 block
                   hover:bg-green-300 font-medium"
             type="submit"
           >CLEAR
-          </button>
+          </button> */}
           {error && (
             <div className="col-12 my-3 bg-danger text-white p-3">
               {error.message}

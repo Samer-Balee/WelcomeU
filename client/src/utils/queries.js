@@ -34,6 +34,20 @@ query Posts {
 }
 `;
 
+export const QUERY_SINGLE_USER = gql`
+query Query($username: String!) {
+  user(username: $username) {
+    _id
+    username
+    email
+    country
+    arrivedAt
+    speak
+    livesIn
+  }
+}
+`;
+
 export const QUERY_SINGLE_POST = gql`
 query Query($postId: ID!) {
   post(postId: $postId) {

@@ -104,24 +104,6 @@ const Profile = () => {
                             }}
                             placeholder="suburb" />
                     </label>
-                    <label className="block mt-3">
-                        <span className="text-gray-700 font-medium">Location</span>
-                        <input className="
-                    mt-3
-                    block
-                    w-full
-                    rounded-md
-                    bg-gray-100
-                    border-transparent
-                    focus:border-gray-500 focus:bg-white focus:ring-0"
-                            name="livesIn"
-                            type="text"
-                            value={data.me.livesIn}
-                            onChange={()=>{
-                                // here should api call to update profile email
-                            }}
-                            placeholder="livesIn" />
-                    </label>
                     <button className="
                     bg-blue-400 rounded-md
                     w-full mt-5 h-10 block

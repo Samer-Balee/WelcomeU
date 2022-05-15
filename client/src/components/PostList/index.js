@@ -41,7 +41,7 @@ const PostList = ({ posts, refetchPosts }) => {
                 className="rounded-full w-32 "
                 alt="Avatar"
               />
-              <Link to='userdetails '>
+              <Link to={`/userdetails/${post.postAuthor}`} className='text-xl font-semibold'>
                 <h4 >{post.postAuthor}</h4>
               </Link>
             </div>
@@ -49,7 +49,7 @@ const PostList = ({ posts, refetchPosts }) => {
               <h4 >{post.createdAt}</h4>
             </div>
             <br />
-            <h5 className="font-bold">
+            <h5 className="pb-8 font-semibold">
               {post.title}
             </h5>
             <div className="bg-white">

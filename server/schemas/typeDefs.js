@@ -12,6 +12,7 @@ type User {
     posts: [Post]
   }
 
+
   type Post {
     _id: ID
     title: String
