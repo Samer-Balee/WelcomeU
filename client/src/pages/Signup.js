@@ -12,7 +12,7 @@ const Signup = () => {
         email: '',
         password: '',
     });
-    
+
     const [addUser, { error, data }] = useMutation(ADD_USER);
 
     // update state based on form input changes
@@ -88,7 +88,7 @@ const Signup = () => {
                     </label>
                     <label className="block mt-3">
                         <span className="text-gray-700 mt-3 font-medium">Password</span>
-                        <input  className="
+                        <input className="
                     mt-2
                     block
                     w-full
@@ -96,18 +96,18 @@ const Signup = () => {
                     bg-gray-100
                     border-transparent
                     focus:border-gray-500 focus:bg-white focus:ring-0"
-                    name="password"
-                    type="password"
-                    value={formState.password}
-                    onChange={handleChange}
-                     placeholder="password" />
+                            name="password"
+                            type="password"
+                            value={formState.password}
+                            onChange={handleChange}
+                            placeholder="password" />
                     </label>
                     <button className="
                     bg-blue-400 rounded-md
                     w-full mt-5 h-10 block
                    hover:bg-blue-500 font-medium"
-                   type="submit"
-                   >signup
+                        type="submit"
+                    >signup
                     </button>
                     <div className="flex flex-row justify-between mt-4">
                         <span className="text-gray-700 mt-3 font-medium">Have account?</span>
@@ -116,15 +116,15 @@ const Signup = () => {
                     bg-green-400 rounded-md
                     w-60 mt-3 h-10 block
                    hover:bg-green-300 font-medium"
-                   
-                   >login
+
+                            >login
                             </button>
                         </Link>
                     </div>
                 </form>
             )}
 
-                {error && (
+            {error && (
                 <div className="my-3 p-3">
                     {error.message}
                 </div>

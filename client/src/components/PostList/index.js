@@ -2,44 +2,33 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import Auth from '../../utils/auth';
 import { REMOVE_POST } from '../../utils/mutations';
-import { QUERY_ME} from '../../utils/queries'
+import { QUERY_ME } from '../../utils/queries'
 
 
 
-const PostList = ({ posts }) => {
+const PostList = ({ posts, refetchPosts }) => {
 
   const [removePost, { error }] = useMutation(REMOVE_POST);
-  //   update(cache, { data: { removePost } }) {
-  //     try {
-  //       const  posts  = cache.readQuery({ query: QUERY_ME });
-  //       cache.writeQuery({
-  //         query: QUERY_ME,
-  //         data: { me: removePost, ...posts},
-  //       });
-  //     } catch (e) {
-  //       console.error(e);
-  //     }
-  //   },
-  // });
 
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
   }
 
-  
+
 
   const handleRemovePost = async (postId) => {
     try {
       const { data } = await removePost({
         variables: { postId },
       });
+      refetchPosts()
     } catch (err) {
       console.error(err);
     }
   };
-
+ console.log(Auth.getProfile().data)
   return (
     <div >
 
@@ -53,11 +42,11 @@ const PostList = ({ posts }) => {
                 alt="Avatar"
               />
               <Link to='userdetails '>
-              <h4 >{post.postAuthor}</h4>
+                <h4 >{post.postAuthor}</h4>
               </Link>
             </div>
             <div>
-                 <h4 >{post.createdAt}</h4>
+              <h4 >{post.createdAt}</h4>
             </div>
             <br />
             <h5 className="font-bold">
@@ -69,28 +58,30 @@ const PostList = ({ posts }) => {
             <div className='flex justify-between'>
               <button className='mt-4 text-blue-500'>Like {post.likeCount}</button>
               <Link
-              className="mt-5 text-blue-500"
-              to={`/posts/${post._id}`}
-            >
-              Comment
-            </Link>
-              <button className="
+                className="mt-5 text-blue-500"
+                to={`/posts/${post._id}`}
+              >
+                Comment
+              </Link>
+              {/* TODO: we should use ids instead, as username is not unique */}
+              {/* backend should only allow owners of the post to delete the post */}
+              {Auth.getProfile().data.username === post.postAuthor &&  <button className="
                   bg-green-200 rounded-md
                   w- mt-3 h-8 block
                   hover:bg-green-300 font-medium"
-            type="submit"
-            onClick={() => handleRemovePost(post._id)}
-          >Delete post
-          </button>
+                type="submit"
+                onClick={() => handleRemovePost(post._id)}
+              >Delete post
+              </button>}
             </div>
-            
-           {/* <FontAwesomeIcon icon="fa-regular fa-thumbs-up" /> */}
-           {error && (
-        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
-      )}
-            
+
+            {/* <FontAwesomeIcon icon="fa-regular fa-thumbs-up" /> */}
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+            )}
+
           </div>
-          
+
         ))}
     </div>
   );

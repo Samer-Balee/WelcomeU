@@ -9,7 +9,7 @@ import { QUERY_POSTS } from '../utils/queries';
 
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_POSTS);
+  const { loading, data, refetch } = useQuery(QUERY_POSTS);
   const posts = data?.posts || [];
 
 
@@ -22,11 +22,10 @@ const Home = () => {
             <div>Loading...</div>
           ) : (
         <PostList 
-        posts= {posts}
+          posts= {posts}
+          refetchPosts={refetch}
         />
-        )}
-        
-        <PostForm />
+        )}        <PostForm />
          
       {/* </div> */}
     </main>

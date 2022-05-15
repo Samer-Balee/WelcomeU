@@ -60,7 +60,7 @@ const App = () => {
                                 element={<Signup />}
                             />
                             <Route
-                                path="/userdetails"
+                                path="/userdetails/:id"
                                 element={<UserDetails />}
                             />
                             

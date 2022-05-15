@@ -6,7 +6,7 @@ import { QUERY_USER } from '../../utils/queries';
 const UserDetails = ( ) => {
 
   const { data } = useQuery(QUERY_USER, {
-      
+    //TODO: pass it from params
     variables: { username: "Julian Balee" },
   } );
   console.log(data);
