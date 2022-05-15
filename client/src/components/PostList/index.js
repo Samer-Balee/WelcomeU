@@ -1,10 +1,10 @@
 import React from 'react';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import Auth from '../../utils/auth';
 import { REMOVE_POST } from '../../utils/mutations';
-import { QUERY_ME } from '../../utils/queries'
+
 
 
 
@@ -28,7 +28,7 @@ const PostList = ({ posts, refetchPosts }) => {
       console.error(err);
     }
   };
- console.log(Auth.getProfile().data)
+ 
   return (
     <div >
 
@@ -65,7 +65,7 @@ const PostList = ({ posts, refetchPosts }) => {
               </Link>
               {/* TODO: we should use ids instead, as username is not unique */}
               {/* backend should only allow owners of the post to delete the post */}
-              {Auth.getProfile().data.username === post.postAuthor &&  <button className="
+              {Auth.getProfile()?.data?.username === post.postAuthor && <button className="
                   bg-green-200 rounded-md
                   w- mt-3 h-8 block
                   hover:bg-green-300 font-medium"

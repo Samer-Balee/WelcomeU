@@ -25,7 +25,8 @@ const Home = () => {
           posts= {posts}
           refetchPosts={refetch}
         />
-        )}        <PostForm />
+        )}        
+        <PostForm />
          
       {/* </div> */}
     </main>
