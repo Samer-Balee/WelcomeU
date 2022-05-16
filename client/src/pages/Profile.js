@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 
 const Profile = () => {
@@ -9,8 +9,6 @@ const Profile = () => {
     if(loading || !data?.me) {
         return (<div>Profile loading</div>)
     }
-
-
 
     return (
         <div className='container w-1/3 mx-auto'>

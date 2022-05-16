@@ -28,7 +28,7 @@ const PostList = ({ posts, refetchPosts }) => {
       console.error(err);
     }
   };
- 
+
   return (
     <div >
 

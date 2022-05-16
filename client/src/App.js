@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Header from './components/Header';
 import Profile from './pages/Profile';
 import UserDetails from './components/UserDetails';
+import SinglePost from './pages/singlePost';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -62,6 +63,10 @@ const App = () => {
                             <Route
                                 path="/userdetails/:username"
                                 element={<UserDetails />}
+                            />
+                            <Route
+                                path="/posts/:postId"
+                                element={<SinglePost />}
                             />
                             
                         </Routes>

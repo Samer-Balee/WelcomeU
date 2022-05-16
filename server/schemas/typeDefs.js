@@ -46,7 +46,7 @@ type User {
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addProfile(country: String!, arrivedAt: String!, speak: String!, livesIn: String!): User
+    addProfile(userId: ID!, country: String!, arrivedAt: String!, speak: String!, livesIn: String!): User
     addPost(title: String!, text: String!): Post
     addComment(postId: ID!, commentText: String!, commentAuthor: String!): Post
     removePost(postId: ID!): Post
