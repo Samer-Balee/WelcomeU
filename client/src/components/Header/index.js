@@ -9,10 +9,10 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className='flex justify-center '>
-      <div className="flex flex-row h-20 w-11/12 bg-gradient-to-r from-green-400 to-blue-500 mt-4 rounded-md shadow shadow-blue-500/40" >
-        <h1 className="w-full text-center text-5xl font-serif font-extrabold py-4 ">WelcomeU</h1>
-        <img src={welcomeu} alt="welcomeu" className="rounded-xl" />
+    <header className='flex justify-center sm:flex-wrap'>
+      <div className="flex flex-row  h-20 w-11/12 bg-gradient-to-r from-green-400 to-blue-500 mt-4 rounded-md shadow shadow-blue-500/40" >
+        <h1 className="w-full md:w-2/3 sm:w-1/3 text-center text-5xl font-serif font-extrabold py-4 ">WelcomeU</h1>
+        <img src={welcomeu} alt="welcomeu" className="rounded-xl md:w-32 sm:w-24" />
         <div className='flex flex-row justify-end w-full'>
         {Auth.loggedIn() ? (
             <>

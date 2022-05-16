@@ -35,22 +35,13 @@ const resolvers = {
     },
     addProfile: async (parent, { country, arrivedAt, speak, livesIn }, context) => {
       if (context.user) { 
-        const userProfile  = await User.create({
-          country,
-          arrivedAt,
-          speak,
-          livesIn
-        });
-        
-      await User.findOneAndUpdate(
+      return await User.findOneAndUpdate(
         { _id: context.user._id},
         {
-          $addToSet: { 
             country: country, 
             arrivedAt: arrivedAt,
              speak: speak, 
              livesIn: livesIn 
-            }
         },
         {
           new: true,
@@ -58,8 +49,6 @@ const resolvers = {
         }
       );
       }
-      // }
-      
       
     },
     login: async (parent, { email, password }) => {

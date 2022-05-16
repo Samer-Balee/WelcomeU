@@ -48,7 +48,7 @@ const PostForm = () => {
 
   return (
 
-    <div className=' w-1/4 p-5 mt-10'>
+    <div className=' w-1/4 p-5 mt-10 h-90'>
       {Auth.loggedIn() ? (
         <form onSubmit={handleFormSubmit}>
           <h3 className="text-2xl font-medium">Creat a post</h3>

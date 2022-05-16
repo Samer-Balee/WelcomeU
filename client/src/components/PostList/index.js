@@ -31,7 +31,7 @@ const PostList = ({ posts, refetchPosts }) => {
       {posts &&
         posts.map((post) => (
           <div key={post._id} className='block p-6 rounded-lg shadow-lg bg-gray-100 max-w-2xl my-10'>
-            <div className='flex flex-row bg-green-100'>
+            <div className='flex flex-raw bg-green-100 '>
               <img
                 src=""
                 className="rounded-full w-32 "
