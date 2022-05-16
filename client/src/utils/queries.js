@@ -54,8 +54,12 @@ query Query($postId: ID!) {
     _id
     title
     text
-    likeCount
-    createdAt
+    comments {
+      _id
+      commentText
+      commentAuthor
+      createdAt
+    }
   }
 }
 `;

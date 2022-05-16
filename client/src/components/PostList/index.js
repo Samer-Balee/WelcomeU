@@ -74,8 +74,6 @@ const PostList = ({ posts, refetchPosts }) => {
               >Delete post
               </button>}
             </div>
-
-            {/* <FontAwesomeIcon icon="fa-regular fa-thumbs-up" /> */}
             {error && (
               <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
             )}

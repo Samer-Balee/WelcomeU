@@ -42,9 +42,9 @@ const CommentForm = ({ postId }) => {
             <input className='
                  
                 '
-              name="title"
+              name="name"
               type="text"
-              placeholder="title"
+              placeholder="name"
               value={commentAuthor}
               onChange={(event) => { setCommentAuthor(event.target.value) }}
             />

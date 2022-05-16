@@ -54,8 +54,6 @@ export const ADD_COMMENT = gql`
 mutation Mutation($postId: ID!, $commentText: String!, $commentAuthor: String!) {
   addComment(postId: $postId, commentText: $commentText, commentAuthor: $commentAuthor) {
     _id
-    title
-    text
     comments {
       _id
       commentText
@@ -74,4 +72,18 @@ mutation Mutation($postId: ID!) {
   }
 }
 `;
+export const REMOVE_COMMENT = gql`
+mutation Mutation($postId: ID!, $commentId: ID!) {
+  removeComment(postId: $postId, commentId: $commentId) {
+    _id
+    comments {
+      _id
+      commentText
+      commentAuthor
+    }
+  }
+}
+`;
+
+
 

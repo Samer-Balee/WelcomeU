@@ -42,7 +42,6 @@ const App = () => {
             <Router>
                 <div className="flex-column justify-flex-start min-100-vh">
                     <Header />
-                    
                         <Routes>
                             <Route
                                 path="/"
@@ -68,9 +67,7 @@ const App = () => {
                                 path="/posts/:postId"
                                 element={<SinglePost />}
                             />
-                            
                         </Routes>
-                   
                 </div>
             </Router>
         </ApolloProvider>

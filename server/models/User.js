@@ -22,7 +22,6 @@ const userSchema = new Schema(
           },
         country: {
             type: String,
-
         },
         arrivedAt: {
             type: String,
