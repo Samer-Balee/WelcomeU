@@ -29,14 +29,14 @@ const CommentList = ({ comments = [], postId , refetchComments }  ) => {
   return (
     <>
       <h3
-        className=""
+        className="font-bold my-2"
       >
         Comments
       </h3>
       <div className="">
         {comments &&
           comments.map((comment) => (
-            <div key={comment._id} className="">
+            <div key={comment._id} className="block p-6 rounded-lg shadow-lg bg-white max-w-80 my-10">
               <div className="">
                 <h5 className="">
                   {comment.commentAuthor} commented{' '}
@@ -47,7 +47,7 @@ const CommentList = ({ comments = [], postId , refetchComments }  ) => {
                 <p className="">{comment.commentText}</p>
                 {Auth.getProfile()?.data?.username === comment.commentAuthor && 
                 <button className='
-                text-xl'
+                text-2xl bg-gray-300 w-10 mt-5'
                 type="submit"
                 onClick={() => handleRemoveComment(postId, comment._id)}
                 >

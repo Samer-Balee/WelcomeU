@@ -6,8 +6,6 @@ import Auth from '../../utils/auth';
 import { REMOVE_POST } from '../../utils/mutations';
 
 
-
-
 const PostList = ({ posts, refetchPosts }) => {
 
   const [removePost, { error }] = useMutation(REMOVE_POST);
@@ -15,8 +13,6 @@ const PostList = ({ posts, refetchPosts }) => {
   if (!posts.length) {
     return <h3>No Posts Yet</h3>;
   }
-
-
 
   const handleRemovePost = async (postId) => {
     try {
@@ -41,9 +37,11 @@ const PostList = ({ posts, refetchPosts }) => {
                 className="rounded-full w-32 "
                 alt="Avatar"
               />
+            
               <Link to={`/userdetails/${post.postAuthor}`} className='text-xl font-semibold'>
                 <h4 >{post.postAuthor}</h4>
               </Link>
+
             </div>
             <div>
               <h4 >{post.createdAt}</h4>
@@ -57,6 +55,7 @@ const PostList = ({ posts, refetchPosts }) => {
             </div>
             <div className='flex justify-between'>
               <button className='mt-4 text-blue-500'>Like {post.likeCount}</button>
+              
               <Link
                 className="mt-5 text-blue-500"
                 to={`/posts/${post._id}`}

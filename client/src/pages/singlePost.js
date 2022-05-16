@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
+import Auth from '../utils/auth';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
@@ -26,7 +26,8 @@ const SinglePost = () => {
       }
 
 return (
-    <div className='p-20' >
+    <div className='container p-20 mx-auto' >
+    
         <div key={post._id} className='block p-6 rounded-lg shadow-lg bg-gray-100 max-w-2xl my-10'>
             <div className='flex flex-row bg-green-100'>
               <img
@@ -50,16 +51,29 @@ return (
             </div>
             
           </div>
-
-        <div className=" ">
+     
+     
+        <div className="block p-6 rounded-lg shadow-lg bg-gray-100 max-w-2xl my-10 ">
         <CommentList comments={post.comments} postId={post._id}  refetchComments={refetch}/>
       </div>
-      <div className=" " >
+      <div className="block p-6 rounded-lg shadow-lg bg-gray-100 max-w-2xl my-10 " >
         <CommentForm postId={post._id} />
       </div>
+     
     </div>
 )
 
 };
 
 export default SinglePost;
+
+
+// ) : (
+//   <>
+//     <p className='text-xl '>
+//       You need to be logged in to see and add comment. Please{' '}
+//       <Link to="/login" className='text-xl text-blue-600/100 font-serif'>login</Link><br />
+//       or <Link to="/signup" className='text-xl text-blue-600/100 font-serif'>signup.</Link>
+//     </p>
+//   </>
+// )}

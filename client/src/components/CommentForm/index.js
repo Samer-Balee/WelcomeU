@@ -25,22 +25,22 @@ const CommentForm = ({ postId }) => {
   };
 
   return (
-    <div>
-      <form
-        className=""
-        onSubmit={handleFormSubmit}
-      >
-        <div className="">
+    <>
+      <form onSubmit={handleFormSubmit}>
+        <div className="block p-6 rounded-lg shadow-lg bg-white max-w-80 my-10">
+        <label className="block p-1 rounded-lg shadow-lg bg-white max-w-80 my-1">Comment
           <textarea
+            className='w-full'
             name="commentText"
             placeholder="Add your comment..."
             value={commentText}
-            className=""
+           
             onChange={(event) => { setCommentText(event.target.value) }}
           ></textarea>
-          <label className="block mt-3">
+          </label>
+          <label className="block ">Your name
             <input className='
-                 
+                 w-full
                 '
               name="name"
               type="text"
@@ -50,14 +50,16 @@ const CommentForm = ({ postId }) => {
             />
           </label>
         </div>
-
-        <div className="">
-          <button className="" type="submit">
+        <div >
+          <button className="bg-green-200 rounded-md
+                  w-full mt-3 h-8 block p-1
+                  hover:bg-green-300 font-medium"
+                 type="submit">
             Add Comment
           </button>
         </div>
       </form>
-    </div>
+    </>
   )
 
 };
