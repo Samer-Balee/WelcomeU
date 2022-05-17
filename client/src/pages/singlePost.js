@@ -16,7 +16,6 @@ const SinglePost = () => {
         // Pass the `postId` URL parameter into query to retrieve this post's data
         variables: { postId: postId },
       });
-      console.log(data);
       const post = data?.post || {};
       console.log(post.comments);
       console.log(post.postAuthor);
@@ -26,6 +25,8 @@ const SinglePost = () => {
       }
 
 return (
+  <>
+  {Auth.loggedIn() ? (
     <div className='container p-20 mx-auto' >
     
         <div key={post._id} className='block p-6 rounded-lg shadow-lg bg-gray-100 max-w-2xl my-10'>
@@ -49,10 +50,7 @@ return (
             <div className="bg-white">
               <p>{post.text}</p>
             </div>
-            
           </div>
-     
-     
         <div className="block p-6 rounded-lg shadow-lg bg-gray-100 max-w-2xl my-10 ">
         <CommentList comments={post.comments} postId={post._id}  refetchComments={refetch}/>
       </div>
@@ -61,19 +59,20 @@ return (
       </div>
      
     </div>
+    ) : (
+      <div className='container w-2/3 mx-auto mt-20'>
+        {/* <h2 className='font-mono text-2xl text-blue-600/100 font-bold'>Welcome to your App</h2> */}
+        <p className='text-xl '>
+          You need to be logged in to share your comments.<br /> Please{' '}
+          <Link to="/login" className='text-xl text-blue-600/100 font-serif'>login</Link>{' '}
+          or <Link to="/signup" className='text-xl text-blue-600/100 font-serif'>signup.</Link>
+        </p>
+        </div>
+      
+    )}
+    </>
 )
 
 };
 
 export default SinglePost;
-
-
-// ) : (
-//   <>
-//     <p className='text-xl '>
-//       You need to be logged in to see and add comment. Please{' '}
-//       <Link to="/login" className='text-xl text-blue-600/100 font-serif'>login</Link><br />
-//       or <Link to="/signup" className='text-xl text-blue-600/100 font-serif'>signup.</Link>
-//     </p>
-//   </>
-// )}

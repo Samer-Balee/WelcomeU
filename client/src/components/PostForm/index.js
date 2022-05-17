@@ -26,7 +26,6 @@ const PostForm = () => {
     },
   });
 
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -44,7 +43,6 @@ const PostForm = () => {
       console.error(err);
     }
   };
-
 
   return (
 
