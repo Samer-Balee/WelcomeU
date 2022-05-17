@@ -27,11 +27,12 @@ const Profile = () => {
               livesIn
             },
           });
+          
           setCountry('');
           setArrivedAt('');
           setSpeak('');
           setLivesIn('');
-
+          console.log(data);
         } catch (err) {
           console.error(err);
         }
@@ -73,7 +74,7 @@ const Profile = () => {
                     focus:border-gray-500 focus:bg-white focus:ring-0"
                             name="country"
                             type="text"
-                            Value={data.me.country}
+                            value={data.me.country}
                             onChange={(event) => { setCountry(event.target.value) }}
                             placeholder="country" />
                     </label>
@@ -89,7 +90,7 @@ const Profile = () => {
                     focus:border-gray-500 focus:bg-white focus:ring-0"
                             name="arrivedAt"
                             type="text"
-                            Value={data.me.arrivedAt}
+                            value={data.me.arrivedAt}
                             onChange={(event) => { setArrivedAt(event.target.value) }}
                           
                             placeholder="month/year" />
@@ -106,7 +107,7 @@ const Profile = () => {
                     focus:border-gray-500 focus:bg-white focus:ring-0"
                             name="speak"
                             type="text"
-                            Value={data.me.speak}
+                            value={data.me.speak}
                             onChange={(event) => { setSpeak(event.target.value) }}
                           
                             placeholder="language" />
@@ -123,7 +124,7 @@ const Profile = () => {
                     focus:border-gray-500 focus:bg-white focus:ring-0"
                             name="livesIn"
                             type="text"
-                            Value={data.me.livesIn}
+                            value={data.me.livesIn}
                             onChange={(event) => { setLivesIn(event.target.value) }}
                           
                             placeholder="suburb" />
